@@ -1,5 +1,0 @@
-query BooksQuery {
-  books {
-    title
-  }
-}

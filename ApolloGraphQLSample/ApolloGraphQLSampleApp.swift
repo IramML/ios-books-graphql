@@ -13,7 +13,7 @@ struct ApolloGraphQLSampleApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BooksView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

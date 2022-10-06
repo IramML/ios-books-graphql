@@ -1,0 +1,36 @@
+query GetBook($getBookId: String) {
+  getBook(id: $getBookId) {
+    id
+    title
+  }
+}
+
+query Hello {
+  hello
+}
+
+query GetBooks {
+  getAllBooks {
+    title
+    id
+  }
+}
+
+mutation CreateBook($book: BookInput) {
+  createBook(book: $book) {
+    id
+    title
+  }
+}
+
+mutation DeleteBook($deleteBookId: String) {
+  deleteBook(id: $deleteBookId)
+}
+
+mutation UpdateBook($updateBookId: String, $updateBookBook: BookInput) {
+  updateBook(id: $updateBookId, book: $updateBookBook) {
+    id
+    title
+  }
+}
+
