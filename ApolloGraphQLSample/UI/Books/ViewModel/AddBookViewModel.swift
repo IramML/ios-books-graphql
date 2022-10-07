@@ -9,10 +9,15 @@ import Foundation
 import SwiftUI
 
 class AddBookViewModel: ObservableObject {
+    private let createBookUseCase: CreateBookUseCase
     @Published var shouldDismiss: Bool = false
     
+    init(createBookUseCase: CreateBookUseCase) {
+        self.createBookUseCase = createBookUseCase
+    }
+    
     func addBook(title: String, author: String) {
-        Network.shared.createBook(book: Book(title: title, author: author)) { [weak self] (bookId: String?, error: ApolloErrors?) in
+        self.createBookUseCase.invoke(book: Book(title: title, author: author)) { [weak self] (bookId: String?, error: RemoteErrors?) in
             if let error = error {
                 
             }

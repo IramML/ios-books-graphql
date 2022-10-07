@@ -13,7 +13,17 @@ struct AddBookView: View {
     @State var title: String = ""
     @State var author: String = ""
     
-    @ObservedObject private var addBookViewModel = AddBookViewModel()
+    @ObservedObject private var addBookViewModel: AddBookViewModel
+    
+    init() {
+        let booksRemoteDataSource: BooksRemoteDataSource = ApolloBooksDataSource()
+        
+        let booksRepository: BooksRepository = BooksRepository(remoteBookDataSource: booksRemoteDataSource)
+        
+        let addBookUseCase: CreateBookUseCase = CreateBookUseCase(booksRepository: booksRepository)
+        
+        addBookViewModel = AddBookViewModel(createBookUseCase: addBookUseCase)
+    }
     
     var body: some View {
         ZStack(alignment: .top) {
