@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddBookView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     @State var title: String = ""
     @State var author: String = ""
@@ -22,37 +22,24 @@ struct AddBookView: View {
         
         let addBookUseCase: CreateBookUseCase = CreateBookUseCase(booksRepository: booksRepository)
         
-        addBookViewModel = AddBookViewModel(createBookUseCase: addBookUseCase)
+        self.addBookViewModel = AddBookViewModel(createBookUseCase: addBookUseCase)
     }
     
     var body: some View {
         ZStack(alignment: .top) {
             VStack {
-                TextField("Title", text: $title)
-                    .fixedSize(horizontal: false, vertical: false)
-                    .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-                TextField("Author", text: $author)
-                    .fixedSize(horizontal: false, vertical: false)
-                    .padding(EdgeInsets(top: 8, leading: 16, bottom: 24, trailing: 16))
-                
-                Button {
-                    addBookViewModel.addBook(title: title, author: author)
-                } label: {
-                    Text("Save")
+                BookFormView() { (book: Book) in
+                    addBookViewModel.addBook(title: book.title, author: book.author)
                 }
-                .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 Spacer()
                 
-                if addBookViewModel.shouldDismiss && dismiss() {
-                   EmptyView()
-                }
             }
         }
-    }
-    
-    func dismiss() -> Bool {
-        presentationMode.wrappedValue.dismiss()
-        return true
+        .onReceive(addBookViewModel.shouldDismiss) { shouldDismiss in
+            if shouldDismiss {
+                presentationMode.wrappedValue.dismiss()
+            }
+        }
     }
 }
 

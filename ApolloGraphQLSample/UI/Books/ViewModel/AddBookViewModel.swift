@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import SwiftUI
+import Combine
 
 class AddBookViewModel: ObservableObject {
     private let createBookUseCase: CreateBookUseCase
-    @Published var shouldDismiss: Bool = false
+    var shouldDismiss = PassthroughSubject<Bool, Never>()
     
     init(createBookUseCase: CreateBookUseCase) {
         self.createBookUseCase = createBookUseCase
@@ -20,8 +20,7 @@ class AddBookViewModel: ObservableObject {
         self.createBookUseCase.invoke(book: Book(title: title, author: author)) { [weak self] (result: RemoteResult<String>) in
             switch result {
             case .success(_):
-                self?.shouldDismiss = true
-                break
+                self?.shouldDismiss.send(true)
             case .failure(_):
                 break
             }

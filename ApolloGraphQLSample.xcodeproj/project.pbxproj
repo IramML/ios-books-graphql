@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0806B928F62423000502F6 /* BookFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0806B828F62423000502F6 /* BookFormView.swift */; };
+		FA0806BB28F625D0000502F6 /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0806BA28F625D0000502F6 /* EditBookView.swift */; };
+		FA0806BD28F62706000502F6 /* EditBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0806BC28F62706000502F6 /* EditBookViewModel.swift */; };
 		FA41335928F509F90075C55B /* RemoteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41335828F509F90075C55B /* RemoteResult.swift */; };
 		FA430FE128EB504300EB1EFF /* ApolloGraphQLSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430FE028EB504300EB1EFF /* ApolloGraphQLSampleApp.swift */; };
 		FA430FE328EB504300EB1EFF /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430FE228EB504300EB1EFF /* BooksView.swift */; };
@@ -59,6 +62,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA0806B828F62423000502F6 /* BookFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookFormView.swift; sourceTree = "<group>"; };
+		FA0806BA28F625D0000502F6 /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
+		FA0806BC28F62706000502F6 /* EditBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookViewModel.swift; sourceTree = "<group>"; };
 		FA41335828F509F90075C55B /* RemoteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteResult.swift; sourceTree = "<group>"; };
 		FA430FDD28EB504300EB1EFF /* ApolloGraphQLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApolloGraphQLSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA430FE028EB504300EB1EFF /* ApolloGraphQLSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloGraphQLSampleApp.swift; sourceTree = "<group>"; };
@@ -226,8 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				FA430FE228EB504300EB1EFF /* BooksView.swift */,
-				FABE8C4C28EDF5D800326B4A /* AddBookView.swift */,
 				FABE8C4E28EE27A500326B4A /* BookDetailView.swift */,
+				FABE8C4C28EDF5D800326B4A /* AddBookView.swift */,
+				FA0806BA28F625D0000502F6 /* EditBookView.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -236,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				FA536EA028EDED9B0049B7FD /* BooksListView.swift */,
+				FA0806B828F62423000502F6 /* BookFormView.swift */,
 			);
 			path = Componets;
 			sourceTree = "<group>";
@@ -244,8 +252,9 @@
 			isa = PBXGroup;
 			children = (
 				FA536E9C28EDEC2C0049B7FD /* BooksViewModel.swift */,
-				FABE8C5028EE5B3800326B4A /* AddBookViewModel.swift */,
 				FA71560128F52425008993E9 /* BookDetailViewModel.swift */,
+				FABE8C5028EE5B3800326B4A /* AddBookViewModel.swift */,
+				FA0806BC28F62706000502F6 /* EditBookViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -485,6 +494,7 @@
 				FABE8C5D28EFAF2700326B4A /* ApolloBooksDataSource.swift in Sources */,
 				FAF49AA528EC7A3000BC72FC /* Book.swift in Sources */,
 				FA536E9228ECC2030049B7FD /* API.swift in Sources */,
+				FA0806B928F62423000502F6 /* BookFormView.swift in Sources */,
 				FABE8C5B28EFAE0700326B4A /* RemoteErrors.swift in Sources */,
 				FABE8C5728EFACC000326B4A /* BooksRepository.swift in Sources */,
 				FA71560228F52425008993E9 /* BookDetailViewModel.swift in Sources */,
@@ -494,7 +504,9 @@
 				FABE8C6D28EFB55300326B4A /* CreateBookUseCase.swift in Sources */,
 				FABE8C4F28EE27A500326B4A /* BookDetailView.swift in Sources */,
 				FA536EA128EDED9B0049B7FD /* BooksListView.swift in Sources */,
+				FA0806BD28F62706000502F6 /* EditBookViewModel.swift in Sources */,
 				FABE8C4D28EDF5D800326B4A /* AddBookView.swift in Sources */,
+				FA0806BB28F625D0000502F6 /* EditBookView.swift in Sources */,
 				FABE8C6228EFB1D600326B4A /* GetBooksUseCase.swift in Sources */,
 				FABE8C6028EFAFF000326B4A /* BooksAdapter.swift in Sources */,
 			);

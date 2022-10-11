@@ -44,6 +44,9 @@ struct BooksView: View {
                 }
                 
             }
+            .onAppear {
+                booksViewModel.fetchBooks()
+            }
             .navigationDestination(isPresented: $shouldPresent) {
                 if shouldPresent, let book = bookToPresent {
                     BookDetailView(bookId: book.id)

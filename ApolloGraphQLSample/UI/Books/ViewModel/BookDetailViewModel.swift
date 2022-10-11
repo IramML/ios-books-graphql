@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class BookDetailViewModel: ObservableObject {
     @Published var isFetching: Bool = false

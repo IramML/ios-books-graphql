@@ -18,7 +18,6 @@ class BooksViewModel: ObservableObject {
     init(getBooksUseCase: GetBooksUseCase, deleteBookUseCase: DeleteBookUseCase) {
         self.getBooksUseCase = getBooksUseCase
         self.deleteBookUseCase = deleteBookUseCase
-        self.fetchBooks()
     }
     
     func fetchBooks() {

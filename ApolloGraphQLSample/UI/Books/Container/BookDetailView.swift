@@ -50,10 +50,14 @@ struct BookDetailView: View {
                 }
                 .sheet(isPresented: $shouldPresentSheet, onDismiss: {
                     withAnimation {
-
+                        bookDetailViewModel.fetchBook(byId: bookId)
                     }
                 }) {
-                    AddBookView()
+                    if let book = bookDetailViewModel.book {
+                        EditBookView(book: book)
+                    } else {
+                        EmptyView()
+                    }
                 }
                 .disabled(bookDetailViewModel.isFetching)
             }
