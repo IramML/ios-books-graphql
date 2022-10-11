@@ -8,14 +8,10 @@
 import SwiftUI
 import CoreData
 
-enum BooksRouter {
-    case add, detail(book: Book)
-}
-
 struct BooksView: View {
     @State private var shouldPresentSheet: Bool = false
     @State private var shouldPresent: Bool = false
-    @State private var routeToPreset: BooksRouter? = nil
+    @State private var bookToPresent: Book? = nil
     @ObservedObject var booksViewModel: BooksViewModel
     
     init() {
@@ -30,54 +26,55 @@ struct BooksView: View {
     }
 
     var body: some View {
-        NavigationView {
-            NavigationStack {
-                ZStack {
-                    BooksListView(books: $booksViewModel.books, openItem: { book in
-                        routeToPreset = .detail(book: book)
-                        shouldPresent = true
-                    }, deleteItems: booksViewModel.deleteItems)
-                }
-                .navigationBarTitle("Books")
-                .navigationDestination(isPresented: $shouldPresent) {
-                    if let routeToPreset = routeToPreset {
-                        switch routeToPreset {
-                        case .add:
-                            EmptyView()
-                        case let .detail(book):
-                            BookDetailView(book: book)
-                        }
+         
+        NavigationStack {
+            ZStack {
+                if !booksViewModel.isFetching {
+                    if booksViewModel.books.count > 0 {
+                        BooksListView(books: $booksViewModel.books, openItem: { book in
+                            bookToPresent = book
+                            shouldPresent = true
+                        }, deleteItems: booksViewModel.deleteItems)
+                    } else {
+                        Text("No books")
                     }
-                   
-                }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        EditButton()
-                    }
-                    ToolbarItem {
-                        Button(action: {
-                            shouldPresentSheet = true
-                        }) {
-                            Label("Add Item", systemImage: "plus")
-                        }
-                        .sheet(isPresented: $shouldPresentSheet, onDismiss: {
-                            withAnimation {
-                                booksViewModel.fetchBooks()
-                            }
-                        }) {
-                            AddBookView()
-                        }
-                        
-                    }
+                    
+                } else {
+                    ProgressView()
                 }
                 
             }
+            .navigationDestination(isPresented: $shouldPresent) {
+                if shouldPresent, let book = bookToPresent {
+                    BookDetailView(bookId: book.id)
+                }
+            }
+            .navigationTitle("Books")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+                ToolbarItem {
+                    Button(action: {
+                        shouldPresentSheet = true
+                    }) {
+                        Label("Add Item", systemImage: "plus")
+                    }
+                    .sheet(isPresented: $shouldPresentSheet, onDismiss: {
+                        withAnimation {
+                            booksViewModel.fetchBooks()
+                        }
+                    }) {
+                        AddBookView()
+                    }
+                    
+                }
+            }
             
-            
-           
         }
         
-        .navigationViewStyle(.stack)
+        
+            
         
     }
 

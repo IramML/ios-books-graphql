@@ -13,6 +13,7 @@ class BooksViewModel: ObservableObject {
     private let deleteBookUseCase: DeleteBookUseCase
     @Published var books: [Book] = []
     @Published var alertPresentation: (shouldPresent: Bool, title: String) = (false, "")
+    @Published var isFetching: Bool = false
     
     init(getBooksUseCase: GetBooksUseCase, deleteBookUseCase: DeleteBookUseCase) {
         self.getBooksUseCase = getBooksUseCase
@@ -21,7 +22,9 @@ class BooksViewModel: ObservableObject {
     }
     
     func fetchBooks() {
+        isFetching = true
         self.getBooksUseCase.invoke { [weak self] result in
+            self?.isFetching = false
             switch result {
             case let .success(books):
                 self?.books = books

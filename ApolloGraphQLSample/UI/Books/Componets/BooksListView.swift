@@ -15,10 +15,11 @@ struct BooksListView: View {
     var body: some View {
         List {
             ForEach(books) { item in
-                NavigationLink {
-                    Text(item.title)
+                Button {
+                    openItem(item)
                 } label: {
                     Text(item.title)
+                        .font(.headline)
                 }
             }
             .onDelete(perform: deleteItems)

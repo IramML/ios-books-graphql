@@ -42,6 +42,7 @@ public final class GetBookQuery: GraphQLQuery {
         __typename
         id
         title
+        author
       }
     }
     """
@@ -94,6 +95,7 @@ public final class GetBookQuery: GraphQLQuery {
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("id", type: .scalar(String.self)),
           GraphQLField("title", type: .scalar(String.self)),
+          GraphQLField("author", type: .scalar(String.self)),
         ]
       }
 
@@ -103,8 +105,8 @@ public final class GetBookQuery: GraphQLQuery {
         self.resultMap = unsafeResultMap
       }
 
-      public init(id: String? = nil, title: String? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Book", "id": id, "title": title])
+      public init(id: String? = nil, title: String? = nil, author: String? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Book", "id": id, "title": title, "author": author])
       }
 
       public var __typename: String {
@@ -131,6 +133,15 @@ public final class GetBookQuery: GraphQLQuery {
         }
         set {
           resultMap.updateValue(newValue, forKey: "title")
+        }
+      }
+
+      public var author: String? {
+        get {
+          return resultMap["author"] as? String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "author")
         }
       }
     }

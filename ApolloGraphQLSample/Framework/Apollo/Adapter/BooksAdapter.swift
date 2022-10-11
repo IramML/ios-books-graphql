@@ -20,6 +20,6 @@ extension GetBooksQuery.Data.GetAllBook{
 }
 extension GetBookQuery.Data.GetBook{
     func toBookDomain() -> Book {
-        Book(id: self.id!, title: self.title!, author: "")
+        Book(id: self.id!, title: self.title!, author: self.author!)
     }
 }

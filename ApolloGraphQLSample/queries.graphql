@@ -2,6 +2,7 @@ query GetBook($getBookId: String) {
   getBook(id: $getBookId) {
     id
     title
+    author
   }
 }
 
