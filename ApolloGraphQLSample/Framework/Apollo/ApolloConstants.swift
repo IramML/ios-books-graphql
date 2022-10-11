@@ -8,5 +8,5 @@
 import Foundation
 
 class ApolloConstants {
-    static let baseURL = "http://192.168.1.106:3000/api"
+    static let baseURL = "http://192.168.1.115:3000/api"
 }

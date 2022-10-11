@@ -14,7 +14,7 @@ class CreateBookUseCase {
         self.booksRepository = booksRepository
     }
     
-    func invoke(book: Book, completion: @escaping (String?, RemoteErrors?) -> Void) {
+    func invoke(book: Book, completion: @escaping (RemoteResult<String>) -> Void) {
         self.booksRepository.createBookFromRemote(book: book, completion: completion)
     }
 }

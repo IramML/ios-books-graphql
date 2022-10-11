@@ -17,14 +17,15 @@ class AddBookViewModel: ObservableObject {
     }
     
     func addBook(title: String, author: String) {
-        self.createBookUseCase.invoke(book: Book(title: title, author: author)) { [weak self] (bookId: String?, error: RemoteErrors?) in
-            if let error = error {
-                
+        self.createBookUseCase.invoke(book: Book(title: title, author: author)) { [weak self] (result: RemoteResult<String>) in
+            switch result {
+            case .success(_):
+                self?.shouldDismiss = true
+                break
+            case .failure(_):
+                break
             }
             
-            if let bookId = bookId {
-                self?.shouldDismiss = true
-            }
         }
     }
 }

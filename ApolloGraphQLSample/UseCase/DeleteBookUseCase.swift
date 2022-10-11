@@ -14,7 +14,7 @@ class DeleteBookUseCase {
         self.booksRepository = booksRepository
     }
     
-    func invoke(bookId: String, completion: @escaping (Bool?, RemoteErrors?) -> Void) {
+    func invoke(bookId: String, completion: @escaping (RemoteResult<Bool>) -> Void) {
         self.booksRepository.deleteBookFromRemote(bookId: bookId, completion: completion)
     }
 }

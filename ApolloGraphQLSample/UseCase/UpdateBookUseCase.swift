@@ -14,7 +14,7 @@ class UpdateBookUseCase {
         self.booksRepository = booksRepository
     }
     
-    func invoke(bookId: String, book: Book, completion: @escaping (Bool?, RemoteErrors?) -> Void) {
+    func invoke(bookId: String, book: Book, completion: @escaping (RemoteResult<Bool>) -> Void) {
         self.booksRepository.updateBookFromRemote(bookId: bookId, book: book, completion: completion)
     }
 }

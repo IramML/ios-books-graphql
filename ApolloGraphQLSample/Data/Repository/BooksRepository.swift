@@ -14,24 +14,24 @@ class BooksRepository {
         self.remoteBookDataSource = remoteBookDataSource
     }
     
-    func getBooksFromRemote(completion: @escaping ([Book]?, RemoteErrors?) -> Void) {
+    func getBooksFromRemote(completion: @escaping (RemoteResult<[Book]>) -> Void) {
         self.remoteBookDataSource.getBooks(completion: completion)
     }
     
-    func getBookFromRemote(bookId: String, completion: @escaping (Book?, RemoteErrors?) -> Void) {
+    func getBookFromRemote(bookId: String, completion: @escaping (RemoteResult<Book>) -> Void) {
         self.remoteBookDataSource.getBook(bookId: bookId, completion: completion)
     }
     
-    func createBookFromRemote(book: Book, completion: @escaping (String?, RemoteErrors?) -> Void) {
-        self.createBookFromRemote(book: book, completion: completion)
+    func createBookFromRemote(book: Book, completion: @escaping (RemoteResult<String>) -> Void) {
+        self.remoteBookDataSource.createBook(book: book, completion: completion)
     }
     
-    func deleteBookFromRemote(bookId: String, completion: @escaping (Bool?, RemoteErrors?) -> Void) {
-        self.deleteBookFromRemote(bookId: bookId, completion: completion)
+    func deleteBookFromRemote(bookId: String, completion: @escaping (RemoteResult<Bool>) -> Void) {
+        self.remoteBookDataSource.deleteBook(bookId: bookId, completion: completion)
     }
     
-    func updateBookFromRemote(bookId: String, book: Book, completion: @escaping (Bool?, RemoteErrors?) -> Void) {
-        self.updateBookFromRemote(bookId: bookId, book: book, completion: completion)
+    func updateBookFromRemote(bookId: String, book: Book, completion: @escaping (RemoteResult<Bool>) -> Void) {
+        self.remoteBookDataSource.updateBook(bookId: bookId, book: book, completion: completion)
     }
     
 }

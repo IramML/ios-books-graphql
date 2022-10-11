@@ -14,7 +14,7 @@ class GetBookUseCase {
         self.booksRepository = booksRepository
     }
     
-    func invoke(bookId: String, completion: @escaping (Book?, RemoteErrors?) -> Void) {
+    func invoke(bookId: String, completion: @escaping (RemoteResult<Book>) -> Void) {
         self.booksRepository.getBookFromRemote(bookId: bookId, completion: completion)
     }
 }

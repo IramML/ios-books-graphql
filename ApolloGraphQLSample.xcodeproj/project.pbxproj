@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA41335928F509F90075C55B /* RemoteResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41335828F509F90075C55B /* RemoteResult.swift */; };
 		FA430FE128EB504300EB1EFF /* ApolloGraphQLSampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430FE028EB504300EB1EFF /* ApolloGraphQLSampleApp.swift */; };
 		FA430FE328EB504300EB1EFF /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA430FE228EB504300EB1EFF /* BooksView.swift */; };
 		FA430FE528EB504600EB1EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA430FE428EB504600EB1EFF /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA41335828F509F90075C55B /* RemoteResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteResult.swift; sourceTree = "<group>"; };
 		FA430FDD28EB504300EB1EFF /* ApolloGraphQLSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApolloGraphQLSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA430FE028EB504300EB1EFF /* ApolloGraphQLSampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloGraphQLSampleApp.swift; sourceTree = "<group>"; };
 		FA430FE228EB504300EB1EFF /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				FABE8C5428EF776F00326B4A /* DataSource */,
 				FABE8C5328EF776800326B4A /* Repository */,
 				FABE8C5A28EFAE0700326B4A /* RemoteErrors.swift */,
+				FA41335828F509F90075C55B /* RemoteResult.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				FABE8C6B28EFB4F900326B4A /* ApolloConstants.swift in Sources */,
 				FA430FEA28EB504600EB1EFF /* Persistence.swift in Sources */,
 				FABE8C6628EFB2B600326B4A /* DeleteBookUseCase.swift in Sources */,
+				FA41335928F509F90075C55B /* RemoteResult.swift in Sources */,
 				FA430FE328EB504300EB1EFF /* BooksView.swift in Sources */,
 				FABE8C5D28EFAF2700326B4A /* ApolloBooksDataSource.swift in Sources */,
 				FAF49AA528EC7A3000BC72FC /* Book.swift in Sources */,

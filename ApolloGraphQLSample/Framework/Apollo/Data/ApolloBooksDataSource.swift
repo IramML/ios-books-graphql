@@ -11,63 +11,63 @@ import Apollo
 class ApolloBooksDataSource: BooksRemoteDataSource {
     private let apollo = ApolloClient(url: URL(string: ApolloConstants.baseURL)!)
     
-    func getBooks(completion: @escaping ([Book]?, RemoteErrors?) -> Void) {
+    func getBooks(completion: @escaping (RemoteResult<[Book]>) -> Void) {
         apollo.fetch(query: GetBooksQuery(), cachePolicy: .fetchIgnoringCacheCompletely) { result in
             guard let data = try? result.get().data, let books = data.getAllBooks else {
-                completion(nil, .httpError)
+                completion(.failure(.httpError))
                 return
             }
             
-            completion(books.filter { $0 != nil }.map { $0!.toBookDomain() }, nil)
+            completion(.success(books.filter { $0 != nil }.map { $0!.toBookDomain() }))
         }
     }
     
-    func getBook(bookId: String, completion: @escaping (Book?, RemoteErrors?) -> Void) {
+    func getBook(bookId: String, completion: @escaping (RemoteResult<Book>) -> Void) {
         apollo.fetch(query: GetBookQuery(getBookId: bookId), cachePolicy: .fetchIgnoringCacheCompletely) { result in
             guard let data = try? result.get().data, let book = data.getBook else {
-                completion(nil, .httpError)
+                completion(.failure(.httpError))
                 return
             }
             
-            completion(book.toBookDomain(), nil)
+            completion(.success(book.toBookDomain()))
         }
     }
     
-    func createBook(book: Book, completion: @escaping (String?, RemoteErrors?) -> Void) {
+    func createBook(book: Book, completion: @escaping (RemoteResult<String>) -> Void) {
         apollo.perform(mutation: CreateBookMutation(book: book.toBookInput())) { result in
             guard let data = try? result.get().data else {
-                completion(nil, .httpError)
+                completion(.failure(.httpError))
                 return
             }
             
             if let id = data.createBook?.id {
-                completion(id, nil)
+                completion(.success(id))
             } else {
-                completion(nil, .httpError)
+                completion(.failure(.httpError))
             }
             
         }
     }
     
-    func deleteBook(bookId: String, completion: @escaping (Bool?, RemoteErrors?) -> Void) {
+    func deleteBook(bookId: String, completion: @escaping (RemoteResult<Bool>) -> Void) {
         apollo.perform(mutation: DeleteBookMutation(deleteBookId: bookId)) { result in
             guard let data = try? result.get().data else {
-                completion(nil, .httpError)
+                completion(.failure(.httpError))
                 return
             }
             
-            completion(data.deleteBook != nil, nil)
+            completion(.success(data.deleteBook != nil))
         }
     }
     
-    func updateBook(bookId: String, book: Book, completion: @escaping (Bool?, RemoteErrors?) -> Void) {
+    func updateBook(bookId: String, book: Book, completion: @escaping (RemoteResult<Bool>) -> Void) {
         apollo.perform(mutation: UpdateBookMutation(updateBookId: bookId, updateBookBook: book.toBookInput())) { result in
             guard let data = try? result.get().data else {
-                completion(nil, .httpError)
+                completion(.failure(.httpError))
                 return
             }
             
-            completion(data.updateBook != nil, nil)
+            completion(.success(data.updateBook != nil))
         }
     }
     

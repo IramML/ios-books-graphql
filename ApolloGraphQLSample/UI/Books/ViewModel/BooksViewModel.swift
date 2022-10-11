@@ -21,13 +21,14 @@ class BooksViewModel: ObservableObject {
     }
     
     func fetchBooks() {
-        self.getBooksUseCase.invoke { [weak self] (books: [Book]?, error: RemoteErrors?) in
-            if error != nil {
-                self?.alertPresentation = (true, "Error getting books")
-            }
-            
-            if let books = books {
+        self.getBooksUseCase.invoke { [weak self] result in
+            switch result {
+            case let .success(books):
                 self?.books = books
+                break
+            case .failure(_):
+                self?.alertPresentation = (true, "Error getting books")
+                break
             }
         }
     }
@@ -37,12 +38,8 @@ class BooksViewModel: ObservableObject {
             guard let offsets = offsets else { return }
             var completed = 0
             for i in offsets {
-                self.deleteBookUseCase.invoke(bookId: books[i].id) { [weak self] (deleted: Bool?, error: RemoteErrors?) in
+                self.deleteBookUseCase.invoke(bookId: books[i].id) { [weak self] _ in
                     completed += 1
-                    if error != nil && offsets.count == 1 {
-                        self?.alertPresentation = (true, "Error deleting book")
-                    }
-                    
                     if completed == offsets.count {
                         self?.fetchBooks()
                     }
