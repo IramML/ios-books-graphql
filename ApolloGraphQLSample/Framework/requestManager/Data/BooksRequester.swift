@@ -8,8 +8,8 @@
 import Foundation
 import Apollo
 
-class ApolloBooksDataSource: BooksRemoteDataSource {
-    private let apollo = ApolloClient(url: URL(string: ApolloConstants.baseURL)!)
+class BooksRequester: BooksRemoteDataSource {
+    private let apollo = ApolloClient(url: URL(string: Constants.baseGraphQLURL)!)
     
     func getBooks(completion: @escaping (RemoteResult<[Book]>) -> Void) {
         apollo.fetch(query: GetBooksQuery(), cachePolicy: .fetchIgnoringCacheCompletely) { result in

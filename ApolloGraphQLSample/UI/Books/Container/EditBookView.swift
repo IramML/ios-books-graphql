@@ -15,7 +15,7 @@ struct EditBookView: View {
     init(book: Book) {
         self.book = book
         
-        let booksRemoteDataSource: BooksRemoteDataSource = ApolloBooksDataSource()
+        let booksRemoteDataSource: BooksRemoteDataSource = BooksRequester()
         let booksRepository: BooksRepository = BooksRepository(remoteBookDataSource: booksRemoteDataSource)
         let updateBookUseCase: UpdateBookUseCase = UpdateBookUseCase(booksRepository: booksRepository)
         self.editBookViewModel = EditBookViewModel(updateBookUseCase: updateBookUseCase)

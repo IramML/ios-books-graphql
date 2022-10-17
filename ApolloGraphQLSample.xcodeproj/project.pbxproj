@@ -31,17 +31,17 @@
 		FABE8C5728EFACC000326B4A /* BooksRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C5628EFACC000326B4A /* BooksRepository.swift */; };
 		FABE8C5928EFADC800326B4A /* BooksRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C5828EFADC800326B4A /* BooksRemoteDataSource.swift */; };
 		FABE8C5B28EFAE0700326B4A /* RemoteErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C5A28EFAE0700326B4A /* RemoteErrors.swift */; };
-		FABE8C5D28EFAF2700326B4A /* ApolloBooksDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C5C28EFAF2700326B4A /* ApolloBooksDataSource.swift */; };
+		FABE8C5D28EFAF2700326B4A /* BooksRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C5C28EFAF2700326B4A /* BooksRequester.swift */; };
 		FABE8C6028EFAFF000326B4A /* BooksAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C5F28EFAFF000326B4A /* BooksAdapter.swift */; };
 		FABE8C6228EFB1D600326B4A /* GetBooksUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C6128EFB1D600326B4A /* GetBooksUseCase.swift */; };
 		FABE8C6428EFB25F00326B4A /* GetBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C6328EFB25F00326B4A /* GetBookUseCase.swift */; };
 		FABE8C6628EFB2B600326B4A /* DeleteBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C6528EFB2B600326B4A /* DeleteBookUseCase.swift */; };
 		FABE8C6828EFB38500326B4A /* UpdateBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C6728EFB38500326B4A /* UpdateBookUseCase.swift */; };
-		FABE8C6B28EFB4F900326B4A /* ApolloConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C6A28EFB4F900326B4A /* ApolloConstants.swift */; };
 		FABE8C6D28EFB55300326B4A /* CreateBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C6C28EFB55300326B4A /* CreateBookUseCase.swift */; };
 		FADBEEA528FDAF8400A9C449 /* BooksRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEA428FDAF8400A9C449 /* BooksRepositoryTests.swift */; };
 		FADBEEA728FDB08800A9C449 /* BooksRemoteDataSourceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEA628FDB08800A9C449 /* BooksRemoteDataSourceStub.swift */; };
 		FADBEEA928FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */; };
+		FADBEEAF28FDC9A100A9C449 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEAE28FDC9A100A9C449 /* Constants.swift */; };
 		FAF49AA528EC7A3000BC72FC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF49AA428EC7A3000BC72FC /* Book.swift */; };
 		FAF49AAA28EC7FD200BC72FC /* queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAF49AA928EC7FD200BC72FC /* queries.graphql */; };
 		FAF49AAC28EC84B600BC72FC /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FAF49AAB28EC84B600BC72FC /* schema.json */; };
@@ -91,17 +91,17 @@
 		FABE8C5628EFACC000326B4A /* BooksRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepository.swift; sourceTree = "<group>"; };
 		FABE8C5828EFADC800326B4A /* BooksRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRemoteDataSource.swift; sourceTree = "<group>"; };
 		FABE8C5A28EFAE0700326B4A /* RemoteErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteErrors.swift; sourceTree = "<group>"; };
-		FABE8C5C28EFAF2700326B4A /* ApolloBooksDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloBooksDataSource.swift; sourceTree = "<group>"; };
+		FABE8C5C28EFAF2700326B4A /* BooksRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRequester.swift; sourceTree = "<group>"; };
 		FABE8C5F28EFAFF000326B4A /* BooksAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksAdapter.swift; sourceTree = "<group>"; };
 		FABE8C6128EFB1D600326B4A /* GetBooksUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBooksUseCase.swift; sourceTree = "<group>"; };
 		FABE8C6328EFB25F00326B4A /* GetBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookUseCase.swift; sourceTree = "<group>"; };
 		FABE8C6528EFB2B600326B4A /* DeleteBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBookUseCase.swift; sourceTree = "<group>"; };
 		FABE8C6728EFB38500326B4A /* UpdateBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBookUseCase.swift; sourceTree = "<group>"; };
-		FABE8C6A28EFB4F900326B4A /* ApolloConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloConstants.swift; sourceTree = "<group>"; };
 		FABE8C6C28EFB55300326B4A /* CreateBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBookUseCase.swift; sourceTree = "<group>"; };
 		FADBEEA428FDAF8400A9C449 /* BooksRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepositoryTests.swift; sourceTree = "<group>"; };
 		FADBEEA628FDB08800A9C449 /* BooksRemoteDataSourceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRemoteDataSourceStub.swift; sourceTree = "<group>"; };
 		FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaksTracker.swift"; sourceTree = "<group>"; };
+		FADBEEAE28FDC9A100A9C449 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FAF49AA428EC7A3000BC72FC /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		FAF49AA928EC7FD200BC72FC /* queries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queries.graphql; sourceTree = "<group>"; };
 		FAF49AAB28EC84B600BC72FC /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 		FA430FDF28EB504300EB1EFF /* ApolloGraphQLSample */ = {
 			isa = PBXGroup;
 			children = (
+				FADBEEAD28FDC99600A9C449 /* Shared */,
 				FABE8C5528EF777C00326B4A /* UseCase */,
 				FABE8C5228EF776100326B4A /* Data */,
 				FA536E9728EDEBD90049B7FD /* UI */,
@@ -204,19 +205,18 @@
 		FA536E9328EDD3D90049B7FD /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				FA536E9428EDD3E10049B7FD /* Apollo */,
+				FA536E9428EDD3E10049B7FD /* requestManager */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
 		};
-		FA536E9428EDD3E10049B7FD /* Apollo */ = {
+		FA536E9428EDD3E10049B7FD /* requestManager */ = {
 			isa = PBXGroup;
 			children = (
 				FABE8C6928EFB4D500326B4A /* Data */,
 				FABE8C5E28EFAFD400326B4A /* Adapter */,
-				FABE8C6A28EFB4F900326B4A /* ApolloConstants.swift */,
 			);
-			path = Apollo;
+			path = requestManager;
 			sourceTree = "<group>";
 		};
 		FA536E9728EDEBD90049B7FD /* UI */ = {
@@ -318,7 +318,7 @@
 		FABE8C6928EFB4D500326B4A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				FABE8C5C28EFAF2700326B4A /* ApolloBooksDataSource.swift */,
+				FABE8C5C28EFAF2700326B4A /* BooksRequester.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -326,6 +326,7 @@
 		FADBEEA228FDAF3300A9C449 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				FADBEEAC28FDC7BD00A9C449 /* requestsManager */,
 			);
 			path = Framework;
 			sourceTree = "<group>";
@@ -345,6 +346,21 @@
 				FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FADBEEAC28FDC7BD00A9C449 /* requestsManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = requestsManager;
+			sourceTree = "<group>";
+		};
+		FADBEEAD28FDC99600A9C449 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FADBEEAE28FDC9A100A9C449 /* Constants.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		FAF49AA328EC796B00BC72FC /* Domain */ = {
@@ -519,13 +535,13 @@
 				FABE8C5128EE5B3900326B4A /* AddBookViewModel.swift in Sources */,
 				FA536E9D28EDEC2C0049B7FD /* BooksViewModel.swift in Sources */,
 				FABE8C5928EFADC800326B4A /* BooksRemoteDataSource.swift in Sources */,
-				FABE8C6B28EFB4F900326B4A /* ApolloConstants.swift in Sources */,
 				FA430FEA28EB504600EB1EFF /* Persistence.swift in Sources */,
 				FABE8C6628EFB2B600326B4A /* DeleteBookUseCase.swift in Sources */,
 				FA41335928F509F90075C55B /* RemoteResult.swift in Sources */,
 				FA430FE328EB504300EB1EFF /* BooksView.swift in Sources */,
-				FABE8C5D28EFAF2700326B4A /* ApolloBooksDataSource.swift in Sources */,
+				FABE8C5D28EFAF2700326B4A /* BooksRequester.swift in Sources */,
 				FAF49AA528EC7A3000BC72FC /* Book.swift in Sources */,
+				FADBEEAF28FDC9A100A9C449 /* Constants.swift in Sources */,
 				FA536E9228ECC2030049B7FD /* API.swift in Sources */,
 				FA0806B928F62423000502F6 /* BookFormView.swift in Sources */,
 				FABE8C5B28EFAE0700326B4A /* RemoteErrors.swift in Sources */,

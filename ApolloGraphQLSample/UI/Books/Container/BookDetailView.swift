@@ -15,7 +15,7 @@ struct BookDetailView: View {
     init(bookId: String) {
         self.bookId = bookId
         
-        let remoteBooksDataSource: BooksRemoteDataSource = ApolloBooksDataSource()
+        let remoteBooksDataSource: BooksRemoteDataSource = BooksRequester()
         let booksRepository: BooksRepository = BooksRepository(remoteBookDataSource: remoteBooksDataSource)
         let getBookUseCase: GetBookUseCase = GetBookUseCase(booksRepository: booksRepository)
         

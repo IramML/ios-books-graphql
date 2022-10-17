@@ -15,7 +15,7 @@ struct BooksView: View {
     @ObservedObject var booksViewModel: BooksViewModel
     
     init() {
-        let booksRemoteDataSource: BooksRemoteDataSource = ApolloBooksDataSource()
+        let booksRemoteDataSource: BooksRemoteDataSource = BooksRequester()
         
         let booksRepository: BooksRepository = BooksRepository(remoteBookDataSource: booksRemoteDataSource)
         
