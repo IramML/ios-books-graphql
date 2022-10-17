@@ -8,5 +8,5 @@
 import Foundation
 
 class Constants {
-    static let baseGraphQLURL = "http://172.20.10.2:3000/api"
+    static let baseGraphQLURL = "http://192.168.1.101:3000/api"
 }

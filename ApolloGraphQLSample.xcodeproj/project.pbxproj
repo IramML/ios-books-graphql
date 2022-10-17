@@ -42,6 +42,7 @@
 		FADBEEA728FDB08800A9C449 /* BooksRemoteDataSourceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEA628FDB08800A9C449 /* BooksRemoteDataSourceStub.swift */; };
 		FADBEEA928FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */; };
 		FADBEEAF28FDC9A100A9C449 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEAE28FDC9A100A9C449 /* Constants.swift */; };
+		FADBEEB128FDCAB500A9C449 /* BaseRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEB028FDCAB500A9C449 /* BaseRequester.swift */; };
 		FAF49AA528EC7A3000BC72FC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF49AA428EC7A3000BC72FC /* Book.swift */; };
 		FAF49AAA28EC7FD200BC72FC /* queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAF49AA928EC7FD200BC72FC /* queries.graphql */; };
 		FAF49AAC28EC84B600BC72FC /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FAF49AAB28EC84B600BC72FC /* schema.json */; };
@@ -102,6 +103,7 @@
 		FADBEEA628FDB08800A9C449 /* BooksRemoteDataSourceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRemoteDataSourceStub.swift; sourceTree = "<group>"; };
 		FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaksTracker.swift"; sourceTree = "<group>"; };
 		FADBEEAE28FDC9A100A9C449 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FADBEEB028FDCAB500A9C449 /* BaseRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequester.swift; sourceTree = "<group>"; };
 		FAF49AA428EC7A3000BC72FC /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		FAF49AA928EC7FD200BC72FC /* queries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queries.graphql; sourceTree = "<group>"; };
 		FAF49AAB28EC84B600BC72FC /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				FABE8C6928EFB4D500326B4A /* Data */,
 				FABE8C5E28EFAFD400326B4A /* Adapter */,
+				FADBEEB028FDCAB500A9C449 /* BaseRequester.swift */,
 			);
 			path = requestManager;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				FADBEEAF28FDC9A100A9C449 /* Constants.swift in Sources */,
 				FA536E9228ECC2030049B7FD /* API.swift in Sources */,
 				FA0806B928F62423000502F6 /* BookFormView.swift in Sources */,
+				FADBEEB128FDCAB500A9C449 /* BaseRequester.swift in Sources */,
 				FABE8C5B28EFAE0700326B4A /* RemoteErrors.swift in Sources */,
 				FABE8C5728EFACC000326B4A /* BooksRepository.swift in Sources */,
 				FA71560228F52425008993E9 /* BookDetailViewModel.swift in Sources */,
