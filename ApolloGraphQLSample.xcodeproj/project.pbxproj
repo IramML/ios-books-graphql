@@ -39,6 +39,9 @@
 		FABE8C6828EFB38500326B4A /* UpdateBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C6728EFB38500326B4A /* UpdateBookUseCase.swift */; };
 		FABE8C6B28EFB4F900326B4A /* ApolloConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C6A28EFB4F900326B4A /* ApolloConstants.swift */; };
 		FABE8C6D28EFB55300326B4A /* CreateBookUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C6C28EFB55300326B4A /* CreateBookUseCase.swift */; };
+		FADBEEA528FDAF8400A9C449 /* BooksRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEA428FDAF8400A9C449 /* BooksRepositoryTests.swift */; };
+		FADBEEA728FDB08800A9C449 /* BooksRemoteDataSourceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEA628FDB08800A9C449 /* BooksRemoteDataSourceStub.swift */; };
+		FADBEEA928FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */; };
 		FAF49AA528EC7A3000BC72FC /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF49AA428EC7A3000BC72FC /* Book.swift */; };
 		FAF49AAA28EC7FD200BC72FC /* queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = FAF49AA928EC7FD200BC72FC /* queries.graphql */; };
 		FAF49AAC28EC84B600BC72FC /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = FAF49AAB28EC84B600BC72FC /* schema.json */; };
@@ -96,6 +99,9 @@
 		FABE8C6728EFB38500326B4A /* UpdateBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBookUseCase.swift; sourceTree = "<group>"; };
 		FABE8C6A28EFB4F900326B4A /* ApolloConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloConstants.swift; sourceTree = "<group>"; };
 		FABE8C6C28EFB55300326B4A /* CreateBookUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBookUseCase.swift; sourceTree = "<group>"; };
+		FADBEEA428FDAF8400A9C449 /* BooksRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRepositoryTests.swift; sourceTree = "<group>"; };
+		FADBEEA628FDB08800A9C449 /* BooksRemoteDataSourceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRemoteDataSourceStub.swift; sourceTree = "<group>"; };
+		FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeaksTracker.swift"; sourceTree = "<group>"; };
 		FAF49AA428EC7A3000BC72FC /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		FAF49AA928EC7FD200BC72FC /* queries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = queries.graphql; sourceTree = "<group>"; };
 		FAF49AAB28EC84B600BC72FC /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
@@ -178,6 +184,9 @@
 		FA430FF528EB504600EB1EFF /* ApolloGraphQLSampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				FADBEEAA28FDBC5600A9C449 /* Helpers */,
+				FADBEEA328FDAF4F00A9C449 /* Data */,
+				FADBEEA228FDAF3300A9C449 /* Framework */,
 				FA430FF628EB504600EB1EFF /* ApolloGraphQLSampleTests.swift */,
 			);
 			path = ApolloGraphQLSampleTests;
@@ -312,6 +321,30 @@
 				FABE8C5C28EFAF2700326B4A /* ApolloBooksDataSource.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		FADBEEA228FDAF3300A9C449 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
+		FADBEEA328FDAF4F00A9C449 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FADBEEA428FDAF8400A9C449 /* BooksRepositoryTests.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FADBEEAA28FDBC5600A9C449 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FADBEEA628FDB08800A9C449 /* BooksRemoteDataSourceStub.swift */,
+				FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		FAF49AA328EC796B00BC72FC /* Domain */ = {
@@ -516,6 +549,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADBEEA528FDAF8400A9C449 /* BooksRepositoryTests.swift in Sources */,
+				FADBEEA928FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift in Sources */,
+				FADBEEA728FDB08800A9C449 /* BooksRemoteDataSourceStub.swift in Sources */,
 				FA430FF728EB504600EB1EFF /* ApolloGraphQLSampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
