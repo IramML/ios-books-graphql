@@ -216,6 +216,7 @@
 		FA430FF528EB504600EB1EFF /* ApolloGraphQLSampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				FAAB318028FF503D0085C3F3 /* New Group */,
 				FAAB317228FF482D0085C3F3 /* UseCase */,
 				FADBEEAA28FDBC5600A9C449 /* Helpers */,
 				FADBEEA328FDAF4F00A9C449 /* Data */,
@@ -309,6 +310,13 @@
 				FAAB317E28FF4D450085C3F3 /* UpdateBookUseCaseTests.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		FAAB318028FF503D0085C3F3 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		FABE8C5228EF776100326B4A /* Data */ = {

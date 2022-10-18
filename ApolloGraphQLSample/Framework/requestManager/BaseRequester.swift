@@ -9,10 +9,14 @@ import Foundation
 import Apollo
 
 class BaseRequester {
-    private let apollo = ApolloClient(url: URL(string: Constants.baseGraphQLURL)!)
+    private let apollo: ApolloClientProtocol
+    
+    init(client: ApolloClientProtocol = ApolloClient(url: URL(string: Constants.baseGraphQLURL)!)) {
+        self.apollo = client
+    }
     
     func perform<Query: GraphQLQuery>(query: Query, completion: @escaping ((GraphQLResult<Query.Data>) -> Void)) {
-        apollo.fetch(query: query, cachePolicy: .fetchIgnoringCacheCompletely) { result in
+        _ = apollo.fetch(query: query, cachePolicy: .fetchIgnoringCacheCompletely, contextIdentifier: nil, queue: .main) { result in
             guard let data = try? result.get().data else {
                 completion(.failure(.httpError))
                 return
@@ -22,7 +26,7 @@ class BaseRequester {
     }
     
     func perform<Mutation: GraphQLMutation>(mutation: Mutation, completion: @escaping ((GraphQLResult<Mutation.Data>) -> Void)) {
-        apollo.perform(mutation: mutation) { result in
+        _ = apollo.perform(mutation: mutation, publishResultToStore: false, queue: .main) { result in
             guard let data = try? result.get().data else {
                 completion(.failure(.httpError))
                 return
