@@ -61,6 +61,17 @@
                ReferencedContainer = "container:ApolloGraphQLSample.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FADBEEE128FE09A500A9C449"
+               BuildableName = "ApolloGraphQLSampleGraphQLE2ETests.xctest"
+               BlueprintName = "ApolloGraphQLSampleGraphQLE2ETests"
+               ReferencedContainer = "container:ApolloGraphQLSample.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
