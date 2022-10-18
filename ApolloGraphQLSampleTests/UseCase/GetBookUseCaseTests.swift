@@ -42,6 +42,9 @@ final class GetBookUseCaseTests: XCTestCase {
         let dataSource = BooksRemoteDataSourceSpy()
         let repository = BooksRepository(remoteBookDataSource: dataSource)
         let useCase = GetBookUseCase(booksRepository: repository)
+        trackForMemoryLeaks(dataSource)
+        trackForMemoryLeaks(repository)
+        trackForMemoryLeaks(useCase)
         return (useCase, dataSource)
     }
     

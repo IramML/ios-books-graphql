@@ -32,6 +32,8 @@
 		FAAB317B28FF4CFC0085C3F3 /* DeleteBookUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB317A28FF4CFC0085C3F3 /* DeleteBookUseCaseTests.swift */; };
 		FAAB317D28FF4D350085C3F3 /* CreateBookUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB317C28FF4D350085C3F3 /* CreateBookUseCaseTests.swift */; };
 		FAAB317F28FF4D450085C3F3 /* UpdateBookUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB317E28FF4D450085C3F3 /* UpdateBookUseCaseTests.swift */; };
+		FAAB318228FF5BB10085C3F3 /* BooksRequesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB318128FF5BB10085C3F3 /* BooksRequesterTests.swift */; };
+		FAAB318428FF5BC10085C3F3 /* ApolloClientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB318328FF5BC10085C3F3 /* ApolloClientStub.swift */; };
 		FABE8C4D28EDF5D800326B4A /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C4C28EDF5D800326B4A /* AddBookView.swift */; };
 		FABE8C4F28EE27A500326B4A /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C4E28EE27A500326B4A /* BookDetailView.swift */; };
 		FABE8C5128EE5B3900326B4A /* AddBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C5028EE5B3800326B4A /* AddBookViewModel.swift */; };
@@ -105,6 +107,8 @@
 		FAAB317A28FF4CFC0085C3F3 /* DeleteBookUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBookUseCaseTests.swift; sourceTree = "<group>"; };
 		FAAB317C28FF4D350085C3F3 /* CreateBookUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBookUseCaseTests.swift; sourceTree = "<group>"; };
 		FAAB317E28FF4D450085C3F3 /* UpdateBookUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBookUseCaseTests.swift; sourceTree = "<group>"; };
+		FAAB318128FF5BB10085C3F3 /* BooksRequesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRequesterTests.swift; sourceTree = "<group>"; };
+		FAAB318328FF5BC10085C3F3 /* ApolloClientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApolloClientStub.swift; sourceTree = "<group>"; };
 		FABE8C4C28EDF5D800326B4A /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		FABE8C4E28EE27A500326B4A /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		FABE8C5028EE5B3800326B4A /* AddBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewModel.swift; sourceTree = "<group>"; };
@@ -216,7 +220,7 @@
 		FA430FF528EB504600EB1EFF /* ApolloGraphQLSampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				FAAB318028FF503D0085C3F3 /* New Group */,
+				FAAB318028FF503D0085C3F3 /* Framework */,
 				FAAB317228FF482D0085C3F3 /* UseCase */,
 				FADBEEAA28FDBC5600A9C449 /* Helpers */,
 				FADBEEA328FDAF4F00A9C449 /* Data */,
@@ -312,11 +316,12 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
-		FAAB318028FF503D0085C3F3 /* New Group */ = {
+		FAAB318028FF503D0085C3F3 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				FAAB318128FF5BB10085C3F3 /* BooksRequesterTests.swift */,
 			);
-			path = "New Group";
+			path = Framework;
 			sourceTree = "<group>";
 		};
 		FABE8C5228EF776100326B4A /* Data */ = {
@@ -387,6 +392,7 @@
 			children = (
 				FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */,
 				FAAB317528FF48A10085C3F3 /* BooksRemoteDataSourceSpy.swift */,
+				FAAB318328FF5BC10085C3F3 /* ApolloClientStub.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -647,6 +653,8 @@
 				FADBEEA528FDAF8400A9C449 /* BooksRepositoryTests.swift in Sources */,
 				FAAB317B28FF4CFC0085C3F3 /* DeleteBookUseCaseTests.swift in Sources */,
 				FAAB317628FF48A10085C3F3 /* BooksRemoteDataSourceSpy.swift in Sources */,
+				FAAB318428FF5BC10085C3F3 /* ApolloClientStub.swift in Sources */,
+				FAAB318228FF5BB10085C3F3 /* BooksRequesterTests.swift in Sources */,
 				FADBEEA928FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
