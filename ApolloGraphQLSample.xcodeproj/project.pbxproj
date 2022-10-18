@@ -25,6 +25,13 @@
 		FA536EA128EDED9B0049B7FD /* BooksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA536EA028EDED9B0049B7FD /* BooksListView.swift */; };
 		FA71560228F52425008993E9 /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71560128F52425008993E9 /* BookDetailViewModel.swift */; };
 		FAAB317128FE0AC40085C3F3 /* XCTestCase+MemoryLeaksTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */; };
+		FAAB317428FF484A0085C3F3 /* GetBooksUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB317328FF484A0085C3F3 /* GetBooksUseCaseTests.swift */; };
+		FAAB317628FF48A10085C3F3 /* BooksRemoteDataSourceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB317528FF48A10085C3F3 /* BooksRemoteDataSourceSpy.swift */; };
+		FAAB317728FF48C70085C3F3 /* BooksRemoteDataSourceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB317528FF48A10085C3F3 /* BooksRemoteDataSourceSpy.swift */; };
+		FAAB317928FF4A130085C3F3 /* GetBookUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB317828FF4A130085C3F3 /* GetBookUseCaseTests.swift */; };
+		FAAB317B28FF4CFC0085C3F3 /* DeleteBookUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB317A28FF4CFC0085C3F3 /* DeleteBookUseCaseTests.swift */; };
+		FAAB317D28FF4D350085C3F3 /* CreateBookUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB317C28FF4D350085C3F3 /* CreateBookUseCaseTests.swift */; };
+		FAAB317F28FF4D450085C3F3 /* UpdateBookUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAB317E28FF4D450085C3F3 /* UpdateBookUseCaseTests.swift */; };
 		FABE8C4D28EDF5D800326B4A /* AddBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C4C28EDF5D800326B4A /* AddBookView.swift */; };
 		FABE8C4F28EE27A500326B4A /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C4E28EE27A500326B4A /* BookDetailView.swift */; };
 		FABE8C5128EE5B3900326B4A /* AddBookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE8C5028EE5B3800326B4A /* AddBookViewModel.swift */; };
@@ -92,6 +99,12 @@
 		FA536E9C28EDEC2C0049B7FD /* BooksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewModel.swift; sourceTree = "<group>"; };
 		FA536EA028EDED9B0049B7FD /* BooksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListView.swift; sourceTree = "<group>"; };
 		FA71560128F52425008993E9 /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
+		FAAB317328FF484A0085C3F3 /* GetBooksUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBooksUseCaseTests.swift; sourceTree = "<group>"; };
+		FAAB317528FF48A10085C3F3 /* BooksRemoteDataSourceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksRemoteDataSourceSpy.swift; sourceTree = "<group>"; };
+		FAAB317828FF4A130085C3F3 /* GetBookUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBookUseCaseTests.swift; sourceTree = "<group>"; };
+		FAAB317A28FF4CFC0085C3F3 /* DeleteBookUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteBookUseCaseTests.swift; sourceTree = "<group>"; };
+		FAAB317C28FF4D350085C3F3 /* CreateBookUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBookUseCaseTests.swift; sourceTree = "<group>"; };
+		FAAB317E28FF4D450085C3F3 /* UpdateBookUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateBookUseCaseTests.swift; sourceTree = "<group>"; };
 		FABE8C4C28EDF5D800326B4A /* AddBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookView.swift; sourceTree = "<group>"; };
 		FABE8C4E28EE27A500326B4A /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		FABE8C5028EE5B3800326B4A /* AddBookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookViewModel.swift; sourceTree = "<group>"; };
@@ -203,6 +216,7 @@
 		FA430FF528EB504600EB1EFF /* ApolloGraphQLSampleTests */ = {
 			isa = PBXGroup;
 			children = (
+				FAAB317228FF482D0085C3F3 /* UseCase */,
 				FADBEEAA28FDBC5600A9C449 /* Helpers */,
 				FADBEEA328FDAF4F00A9C449 /* Data */,
 			);
@@ -285,6 +299,18 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		FAAB317228FF482D0085C3F3 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				FAAB317328FF484A0085C3F3 /* GetBooksUseCaseTests.swift */,
+				FAAB317828FF4A130085C3F3 /* GetBookUseCaseTests.swift */,
+				FAAB317A28FF4CFC0085C3F3 /* DeleteBookUseCaseTests.swift */,
+				FAAB317C28FF4D350085C3F3 /* CreateBookUseCaseTests.swift */,
+				FAAB317E28FF4D450085C3F3 /* UpdateBookUseCaseTests.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
 		FABE8C5228EF776100326B4A /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				FADBEEA828FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift */,
+				FAAB317528FF48A10085C3F3 /* BooksRemoteDataSourceSpy.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -605,7 +632,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAB317428FF484A0085C3F3 /* GetBooksUseCaseTests.swift in Sources */,
+				FAAB317F28FF4D450085C3F3 /* UpdateBookUseCaseTests.swift in Sources */,
+				FAAB317D28FF4D350085C3F3 /* CreateBookUseCaseTests.swift in Sources */,
+				FAAB317928FF4A130085C3F3 /* GetBookUseCaseTests.swift in Sources */,
 				FADBEEA528FDAF8400A9C449 /* BooksRepositoryTests.swift in Sources */,
+				FAAB317B28FF4CFC0085C3F3 /* DeleteBookUseCaseTests.swift in Sources */,
+				FAAB317628FF48A10085C3F3 /* BooksRemoteDataSourceSpy.swift in Sources */,
 				FADBEEA928FDB55500A9C449 /* XCTestCase+MemoryLeaksTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -625,6 +658,7 @@
 			files = (
 				FADBEEE528FE09A500A9C449 /* ApolloGraphQLSampleGraphQLE2ETests.swift in Sources */,
 				FAAB317128FE0AC40085C3F3 /* XCTestCase+MemoryLeaksTracker.swift in Sources */,
+				FAAB317728FF48C70085C3F3 /* BooksRemoteDataSourceSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
