@@ -31,7 +31,7 @@ final class BooksRepositoryTests: XCTestCase {
         
         XCTAssertNotNil(booksRetreived)
         XCTAssertEqual(booksRetreived!.count, 2)
-        XCTAssertEqual(repository.countGetBooksFromRemote, 1)
+        XCTAssertEqual(repository.receivedRequests, [.getBooks])
     }
     
     func test_getBookByIdFromRemote() {
@@ -56,7 +56,7 @@ final class BooksRepositoryTests: XCTestCase {
         
         XCTAssertNotNil(bookRetreived)
         XCTAssertEqual(bookRetreived!.id, bookId)
-        XCTAssertEqual(repository.getBookFromRemoteCallsIds, [bookId])
+        XCTAssertEqual(repository.receivedRequests, [.getBook(bookId: bookId)])
     }
     
     func test_createBookFromRemote() {
@@ -80,7 +80,7 @@ final class BooksRepositoryTests: XCTestCase {
         wait(for: [testExpectation], timeout: 1.0)
         
         XCTAssertNotNil(bookIdRetreived)
-        XCTAssertEqual(repository.createBookFromRemoteBooks.count, 1)
+        XCTAssertEqual(repository.receivedRequests, [.createBook(book: book)])
     }
     
     func test_deleteBookFromRemote() {
@@ -104,7 +104,7 @@ final class BooksRepositoryTests: XCTestCase {
         wait(for: [testExpectation], timeout: 1.0)
         
         XCTAssertNotNil(didDelete)
-        XCTAssertEqual(repository.deleteBookFromRemoteCallsIds, [bookId])
+        XCTAssertEqual(repository.receivedRequests, [.deleteBook(bookId: bookId)])
     }
     
     func test_updateBookFromRemote() {
@@ -129,13 +129,7 @@ final class BooksRepositoryTests: XCTestCase {
         wait(for: [testExpectation], timeout: 1.0)
         
         XCTAssertNotNil(didUpdate)
-        XCTAssertEqual(repository.updateBookFromRemoteCallsParams.count, 1)
-        let bookUpdated = repository.updateBookFromRemoteCallsParams.first
-        XCTAssertNotNil(bookUpdated)
-        XCTAssertEqual(bookUpdated!.bookId, bookId)
-        XCTAssertEqual(bookUpdated!.book.id, book.id)
-        XCTAssertEqual(bookUpdated!.book.title, book.title)
-        XCTAssertEqual(bookUpdated!.book.author, book.author)
+        XCTAssertEqual(repository.receivedRequests, [.updateBook(bookId: bookId, book: book)])
     }
     
     // MARK - helpers
@@ -153,34 +147,55 @@ final class BooksRepositoryTests: XCTestCase {
 }
 
 class BooksRepositorySpy: BooksRepository {
-    private(set) var countGetBooksFromRemote: Int = 0
-    private(set) var getBookFromRemoteCallsIds: [String] = []
-    private(set) var createBookFromRemoteBooks: [Book] = []
-    private(set) var deleteBookFromRemoteCallsIds: [String] = []
-    private(set) var updateBookFromRemoteCallsParams: [(bookId: String, book: Book)] = []
+    private(set) var receivedRequests: [ReceivedRequest] = []
+    
+    enum ReceivedRequest: Equatable {
+        static func == (lhs: BooksRepositorySpy.ReceivedRequest, rhs: BooksRepositorySpy.ReceivedRequest) -> Bool {
+            switch (lhs, rhs) {
+            case (.getBooks, .getBooks):
+                return true
+            case (.getBook(let bookIdLhs), .getBook(let bookIdRhs)):
+                return bookIdLhs == bookIdRhs
+            case (.createBook(let bookLhs), .createBook(let bookRhs)):
+                return (bookLhs.id == bookRhs.id) && (bookLhs.title == bookRhs.title) && (bookLhs.author == bookRhs.author)
+            case (.deleteBook(let bookIdLhs), .deleteBook(let bookIdRhs)):
+                return bookIdLhs == bookIdRhs
+            case (.updateBook(let bookIdLhs, let bookLhs), .updateBook(let bookIdRhs, let bookRhs)):
+                return bookIdLhs == bookIdRhs && ((bookLhs.id == bookRhs.id) && (bookLhs.title == bookRhs.title) && (bookLhs.author == bookRhs.author))
+            default:
+                return false
+            }
+        }
+        
+        case getBooks
+        case getBook(bookId: String)
+        case createBook(book: Book)
+        case deleteBook(bookId: String)
+        case updateBook(bookId: String, book: Book)
+    }
     
     override func getBooksFromRemote(completion: @escaping (RemoteResult<[Book]>) -> Void) {
-        countGetBooksFromRemote += 1
+        receivedRequests.append(.getBooks)
         super.getBooksFromRemote(completion: completion)
     }
     
     override func getBookFromRemote(bookId: String, completion: @escaping (RemoteResult<Book>) -> Void) {
-        getBookFromRemoteCallsIds.append(bookId)
+        receivedRequests.append(.getBook(bookId: bookId))
         super.getBookFromRemote(bookId: bookId, completion: completion)
     }
     
     override func createBookFromRemote(book: Book, completion: @escaping (RemoteResult<String>) -> Void) {
-        createBookFromRemoteBooks.append(book)
+        receivedRequests.append(.createBook(book: book))
         super.createBookFromRemote(book: book, completion: completion)
     }
     
     override func deleteBookFromRemote(bookId: String, completion: @escaping (RemoteResult<Bool>) -> Void) {
-        deleteBookFromRemoteCallsIds.append(bookId)
+        receivedRequests.append(.deleteBook(bookId: bookId))
         super.deleteBookFromRemote(bookId: bookId, completion: completion)
     }
     
     override func updateBookFromRemote(bookId: String, book: Book, completion: @escaping (RemoteResult<Bool>) -> Void) {
-        updateBookFromRemoteCallsParams.append((bookId: bookId, book: book))
+        receivedRequests.append(.updateBook(bookId: bookId, book: book))
         super.updateBookFromRemote(bookId: bookId, book: book, completion: completion)
     }
 }
